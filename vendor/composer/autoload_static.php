@@ -63,6 +63,7 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             'Application\\' => 12,
             'ApplicationTest\\' => 16,
+            'Admin\\' => 6,
         ),
     );
 
@@ -202,6 +203,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'ApplicationTest\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/Application/test',
+        ),
+        'Admin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Admin/src',
         ),
     );
 
