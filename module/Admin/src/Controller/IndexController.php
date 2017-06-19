@@ -9,10 +9,6 @@ namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Application\Entity\Organisation;
-
-use Interop\Container\ContainerInterface;
-
 
 class IndexController extends AbstractActionController
 {
@@ -22,21 +18,22 @@ class IndexController extends AbstractActionController
      * @var Doctrine\ORM\EntityManager 
      */
     private $entityManager;
-    
+
     /**
      * Constructor is used for injecting dependencies into the controller.
      */
-   // public function __construct($entityManager) 
-   // {
-   //     $this->entityManager = $entityManager;
-   // }
-public function __invoke(ContainerInterface $container){
-$this->entityManager = $container->get('doctrine.entitymanager.orm_default');
-echo "fff";
-die;
-}
+    public function __construct($entityManager, $organisation) 
+    {
+        $this->entityManager = $entityManager;
+        $this->organisation = $organisation;
+      //  var_dump($organisation);
+        
+    }
+
     public function indexAction()
     {
+     //   $org=$this->organisation->fetchAll();
+        var_dump($this->organisation->getData());
 //$entityManager = $container->get('doctrine.entitymanager.orm_default'); 
 //$em = $this->getServiceLocator()
  //           ->get('doctrine.entitymanager.orm_default');
