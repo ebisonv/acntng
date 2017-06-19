@@ -26,8 +26,7 @@ class OrganisationModel {
     }
 
     public function getData() {
-        $org = $this->entityManager->getRepository(Organisation::class)
-                ->getAll();
+        $org = $this->entityManager->getRepository(Organisation::class);
         return $org;
     }
 

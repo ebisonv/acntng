@@ -18,7 +18,7 @@ return [
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
                     'params' => [
                         'host' => 'localhost',
-                        'port' => '5432',
+                        'port' => '3306',
                         'dbname' => 'inventory',
                 ],
             ],
