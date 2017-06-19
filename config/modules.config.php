@@ -19,5 +19,5 @@ return [
     'DoctrineModule',
     'DoctrineORMModule',
     'Admin',
-    'Application',
+   // 'Application',
 ];
