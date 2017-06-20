@@ -10,6 +10,7 @@ namespace Admin\Controller;
 
 use Admin\Controller\AppController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 
 class IndexController extends AppController {
 
@@ -29,8 +30,9 @@ class IndexController extends AppController {
 
     public function indexAction() {
 
-        var_dump($this->organisationService->getData());
-        return new ViewModel();
+      //  var_dump($this->organisationService->getData());
+      //  return new ViewModel();
+        return new JsonModel(["dgdg"=>"ggf"]);
     }
 
 }

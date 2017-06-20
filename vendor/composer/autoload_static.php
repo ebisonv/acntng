@@ -24,6 +24,7 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
             'Zend\\Mvc\\' => 9,
             'Zend\\ModuleManager\\' => 19,
             'Zend\\Loader\\' => 12,
+            'Zend\\Json\\' => 10,
             'Zend\\InputFilter\\' => 17,
             'Zend\\Hydrator\\' => 14,
             'Zend\\Http\\' => 10,
@@ -107,6 +108,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'Zend\\Loader\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-loader/src',
+        ),
+        'Zend\\Json\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-json/src',
         ),
         'Zend\\InputFilter\\' => 
         array (
