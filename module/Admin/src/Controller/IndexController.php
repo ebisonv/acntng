@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
  * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
@@ -7,36 +8,29 @@
 
 namespace Admin\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Admin\Controller\AppController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
-{
+class IndexController extends AppController {
 
-/**
-     * Entity manager.
-     * @var Doctrine\ORM\EntityManager 
+    /**
+     * OrganisationService.
+     * @var Admin\Service\Organisation
      */
-    private $entityManager;
+    protected $organisationService;
 
     /**
      * Constructor is used for injecting dependencies into the controller.
      */
-    public function __construct($entityManager, $organisation) 
-    {
-        $this->entityManager = $entityManager;
-        $this->organisation = $organisation;
-      //  var_dump($organisation);
-        
+    public function __construct($entityManager, $organisationService) {
+        parent::__construct($entityManager);
+        $this->organisationService = $organisationService;
     }
 
-    public function indexAction()
-    {
-     //   $org=$this->organisation->fetchAll();
-        var_dump($this->organisation->getData());
-//$entityManager = $container->get('doctrine.entitymanager.orm_default'); 
-//$em = $this->getServiceLocator()
- //           ->get('doctrine.entitymanager.orm_default');
+    public function indexAction() {
+
+        var_dump($this->organisationService->getData());
         return new ViewModel();
     }
+
 }

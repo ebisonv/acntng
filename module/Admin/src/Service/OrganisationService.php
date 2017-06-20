@@ -10,8 +10,7 @@ use Admin\Entity\Organisation;
  * The PostManager service is responsible for adding new posts, updating existing
  * posts, adding tags to post, etc.
  */
-class OrganisationModel {
-
+class OrganisationService {
     /**
      * Entity manager.
      * @var Doctrine\ORM\EntityManager;
@@ -26,7 +25,7 @@ class OrganisationModel {
     }
 
     public function getData() {
-        $org = $this->entityManager->getRepository(Organisation::class);
+        $org = $this->entityManager->getRepository(Organisation::class)->findPublishedPosts()->getResult();
         return $org;
     }
 

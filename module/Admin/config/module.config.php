@@ -39,12 +39,13 @@ return [
     ],
     'controllers' => [
         'factories' => [
+            Controller\AppController::class => Controller\Factory\AppControllerFactory::class,
             Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
         ],
     ],
       'service_manager' => [
         'factories' => [
-            Service\OrganisationModel::class => Service\Factory\OrganisationModelFactory::class,
+            Service\OrganisationService::class => Service\Factory\OrganisationServiceFactory::class,
         ],
     ],
     'view_manager' => [

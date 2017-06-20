@@ -14,11 +14,9 @@ class OrganisationRepository extends EntityRepository {
      * Retrieves all published posts in descending date order.
      * @return Query
      */
-    public function getAll() {
+    public function findPublishedPosts() {
         $entityManager = $this->getEntityManager();
-
         $queryBuilder = $entityManager->createQueryBuilder();
-
         $queryBuilder->select('o')
                 ->from(Organisation::class, 'o');
         return $queryBuilder->getQuery();
