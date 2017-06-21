@@ -25,12 +25,12 @@ return [
                     ],
                 ],
             ],
-            'application' => [
+            'register' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route' => '/application[/:action]',
+                    'route' => '/register[/:action]',
                     'defaults' => [
-                        'controller' => Controller\IndexController::class,
+                        'controller' => Controller\RegisterController::class,
                         'action' => 'index',
                     ],
                 ],
@@ -41,6 +41,7 @@ return [
         'factories' => [
             Controller\AppController::class => Controller\Factory\AppControllerFactory::class,
             Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
+            Controller\RegisterController::class => Controller\Factory\RegisterControllerFactory::class,
         ],
     ],
       'service_manager' => [
