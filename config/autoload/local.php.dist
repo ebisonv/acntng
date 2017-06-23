@@ -21,7 +21,7 @@ return [
                 'params' => [
                     'host'     => 'localhost',                    
                     'user'     => 'root',
-                    'password' => '',
+                    'password' => '12345678',
                     'dbname'   => 'inventory',
                 ]
             ],            

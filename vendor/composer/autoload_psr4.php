@@ -10,6 +10,7 @@ return array(
     'Zend\\Validator\\' => array($vendorDir . '/zendframework/zend-validator/src'),
     'Zend\\Uri\\' => array($vendorDir . '/zendframework/zend-uri/src'),
     'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
+    'Zend\\Session\\' => array($vendorDir . '/zendframework/zend-session/src'),
     'Zend\\ServiceManager\\' => array($vendorDir . '/zendframework/zend-servicemanager/src'),
     'Zend\\Router\\' => array($vendorDir . '/zendframework/zend-router/src'),
     'Zend\\Paginator\\' => array($vendorDir . '/zendframework/zend-paginator/src'),
