@@ -89,15 +89,15 @@ class UserManager
         if ($user==null) {
             $user = new Users();
             $user->setEmail('admin@example.com');
-            $user->setFullName('Admin');
+            $user->setName('Admin');
             $bcrypt = new Bcrypt();
             $passwordHash = $bcrypt->create('Secur1ty');        
             $user->setPassword($passwordHash);
             $user->setStatus(Users::STATUS_ACTIVE);
-            $user->setDateCreated(date('Y-m-d H:i:s'));
+            $user->setCreateDate(date('Y-m-d H:i:s'));
             
             $this->entityManager->persist($user);
-            $this->entityManager->flush();
+           // $this->entityManager->flush();
         }
     }
     

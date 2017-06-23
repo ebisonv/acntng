@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
 {
     public static $files = array (
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
     );
@@ -22,19 +23,28 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
             'Zend\\ServiceManager\\' => 20,
             'Zend\\Router\\' => 12,
             'Zend\\Paginator\\' => 15,
+            'Zend\\Mvc\\Plugin\\Prg\\' => 20,
+            'Zend\\Mvc\\Plugin\\Identity\\' => 25,
+            'Zend\\Mvc\\Plugin\\FlashMessenger\\' => 31,
+            'Zend\\Mvc\\Plugin\\FilePrg\\' => 24,
             'Zend\\Mvc\\' => 9,
             'Zend\\ModuleManager\\' => 19,
+            'Zend\\Math\\' => 10,
             'Zend\\Loader\\' => 12,
             'Zend\\Json\\' => 10,
             'Zend\\InputFilter\\' => 17,
+            'Zend\\I18n\\' => 10,
             'Zend\\Hydrator\\' => 14,
             'Zend\\Http\\' => 10,
             'Zend\\Form\\' => 10,
             'Zend\\Filter\\' => 12,
             'Zend\\EventManager\\' => 18,
             'Zend\\Escaper\\' => 13,
+            'Zend\\Crypt\\' => 11,
             'Zend\\Config\\' => 12,
             'Zend\\ComponentInstaller\\' => 24,
+            'Zend\\Code\\' => 10,
+            'Zend\\Captcha\\' => 13,
             'Zend\\Cache\\' => 11,
             'Zend\\Authentication\\' => 20,
             'ZF\\DevelopmentMode\\' => 19,
@@ -42,6 +52,7 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
         ),
@@ -49,6 +60,7 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+            'PackageVersions\\' => 16,
         ),
         'I' => 
         array (
@@ -57,6 +69,7 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\DBAL\\Migrations\\' => 25,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
@@ -102,6 +115,22 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-paginator/src',
         ),
+        'Zend\\Mvc\\Plugin\\Prg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mvc-plugin-prg/src',
+        ),
+        'Zend\\Mvc\\Plugin\\Identity\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mvc-plugin-identity/src',
+        ),
+        'Zend\\Mvc\\Plugin\\FlashMessenger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mvc-plugin-flashmessenger/src',
+        ),
+        'Zend\\Mvc\\Plugin\\FilePrg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mvc-plugin-fileprg/src',
+        ),
         'Zend\\Mvc\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-mvc/src',
@@ -109,6 +138,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'Zend\\ModuleManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-modulemanager/src',
+        ),
+        'Zend\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-math/src',
         ),
         'Zend\\Loader\\' => 
         array (
@@ -121,6 +154,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'Zend\\InputFilter\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-inputfilter/src',
+        ),
+        'Zend\\I18n\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-i18n/src',
         ),
         'Zend\\Hydrator\\' => 
         array (
@@ -146,6 +183,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-escaper/src',
         ),
+        'Zend\\Crypt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-crypt/src',
+        ),
         'Zend\\Config\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-config/src',
@@ -153,6 +194,14 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'Zend\\ComponentInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-component-installer/src',
+        ),
+        'Zend\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
+        'Zend\\Captcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-captcha/src',
         ),
         'Zend\\Cache\\' => 
         array (
@@ -170,6 +219,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
@@ -186,6 +239,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
@@ -193,6 +250,10 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\DBAL\\Migrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (
@@ -221,6 +282,13 @@ class ComposerStaticInitb5af2c09d912e1324e8eba022cff55ba
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'ProxyManager\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 

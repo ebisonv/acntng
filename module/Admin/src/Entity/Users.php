@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Users
 {
+   // User status constants.
+    const STATUS_ACTIVE       = 1; // Active user.
+    const STATUS_RETIRED      = 2; // Retired user.
     /**
      * @var integer
      *
