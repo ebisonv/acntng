@@ -21,10 +21,7 @@ class AppController extends AbstractActionController {
     /**
      * Constructor is used for injecting dependencies into the controller.
      */
-    public function __construct($entityManager, $request) {
-        $this->entityManager = $entityManager;
-        $this->data=$request->getPost();
-        var_dump($this->data);
-    }
+    public function __construct($entityManager) {
+        $this->entityManager = $entityManager;    }
 
 }

@@ -18,64 +18,74 @@ return [
             'home' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/',
+                    'route' => '/',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
+                        'action' => 'index',
                     ],
                 ],
             ],
             'login' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/login',
+                    'route' => '/login',
                     'defaults' => [
                         'controller' => Controller\AuthController::class,
-                        'action'     => 'login',
+                        'action' => 'login',
                     ],
                 ],
             ],
             'logout' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/logout',
+                    'route' => '/logout',
                     'defaults' => [
                         'controller' => Controller\AuthController::class,
-                        'action'     => 'logout',
+                        'action' => 'logout',
                     ],
                 ],
             ],
             'reset-password' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/reset-password',
+                    'route' => '/reset-password',
                     'defaults' => [
                         'controller' => Controller\UserController::class,
-                        'action'     => 'resetPassword',
+                        'action' => 'resetPassword',
                     ],
                 ],
             ],
             'set-password' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/set-password',
+                    'route' => '/set-password',
                     'defaults' => [
                         'controller' => Controller\UserController::class,
-                        'action'     => 'setPassword',
+                        'action' => 'setPassword',
                     ],
                 ],
             ],
             'users' => [
-                'type'    => Segment::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route'    => '/users[/:action[/:id]]',
+                    'route' => '/users[/:action[/:id]]',
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[a-zA-Z0-9_-]*',
                     ],
                     'defaults' => [
-                        'controller'    => Controller\UserController::class,
-                        'action'        => 'index',
+                        'controller' => Controller\UserController::class,
+                        'action' => 'index',
+                    ],
+                ],
+            ],
+            'about' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route' => '/about',
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action' => 'about',
                     ],
                 ],
             ],
@@ -87,7 +97,7 @@ return [
             Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
             Controller\RegisterController::class => Controller\Factory\RegisterControllerFactory::class,
             Controller\AuthController::class => Controller\Factory\AuthControllerFactory::class,
-            Controller\UserController::class => Controller\Factory\UserControllerFactory::class,   
+            Controller\UserController::class => Controller\Factory\UserControllerFactory::class,
         ],
     ],
     // The 'access_filter' key is used by the User module to restrict or permit
@@ -103,13 +113,24 @@ return [
             ],
         ]
     ],
-      'service_manager' => [
+    'service_manager' => [
         'factories' => [
             Service\OrganisationService::class => Service\Factory\OrganisationServiceFactory::class,
             \Zend\Authentication\AuthenticationService::class => Service\Factory\AuthenticationServiceFactory::class,
             Service\AuthAdapter::class => Service\Factory\AuthAdapterFactory::class,
             Service\AuthManager::class => Service\Factory\AuthManagerFactory::class,
             Service\UserManager::class => Service\Factory\UserManagerFactory::class,
+            Service\NavManager::class => Service\Factory\NavManagerFactory::class,
+        ],
+    ],
+    'view_helpers' => [
+        'factories' => [
+            View\Helper\Menu::class => View\Helper\Factory\MenuFactory::class,
+            View\Helper\Breadcrumbs::class => InvokableFactory::class,
+        ],
+        'aliases' => [
+            'mainMenu' => View\Helper\Menu::class,
+            'pageBreadcrumbs' => View\Helper\Breadcrumbs::class,
         ],
     ],
     'view_manager' => [
@@ -140,7 +161,7 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                     __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
                 ],
             ],
         ],

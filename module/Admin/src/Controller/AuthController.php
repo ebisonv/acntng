@@ -56,6 +56,10 @@ class AuthController extends AbstractActionController
     {
         // Retrieve the redirect URL (if passed). We will redirect the user to this
         // URL after successfull login.
+        
+        if($this->authManager->getIdentity()!=null){
+            return $this->redirect()->toRoute('home');
+        }
         $redirectUrl = (string)$this->params()->fromQuery('redirectUrl', '');
         if (strlen($redirectUrl)>2048) {
             throw new \Exception("Too long redirectUrl argument passed");
@@ -87,7 +91,7 @@ class AuthController extends AbstractActionController
                 $data = $form->getData();
                 
                 // Perform login attempt.
-                $result = $this->authManager->login($data['email'], 
+                $result = $this->authManager->login($data['username'], 
                         $data['password'], $data['remember_me']);
                 
                 // Check result.
@@ -118,7 +122,6 @@ class AuthController extends AbstractActionController
                 $isLoginError = true;
             }           
         } 
-        
         return new ViewModel([
             'form' => $form,
             'isLoginError' => $isLoginError,

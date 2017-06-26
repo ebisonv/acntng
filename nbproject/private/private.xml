@@ -3,7 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Module.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Controller/Factory/IndexControllerFactory.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Service/AuthAdapter.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Controller/AuthController.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/view/admin/auth/login.phtml</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Service/AuthManager.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Form/LoginForm.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/src/Service/UserManager.php</file>
             <file>file:/C:/wamp64/www/inventory/module/Admin/src/Controller/IndexController.php</file>
+            <file>file:/C:/wamp64/www/inventory/module/Admin/config/module.config.php</file>
         </group>
     </open-files>
 </project-private>

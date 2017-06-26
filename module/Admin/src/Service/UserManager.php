@@ -2,8 +2,10 @@
 namespace Admin\Service;
 
 use Admin\Entity\Users;
+use Admin\Entity\Organisation;
 use Zend\Crypt\Password\Bcrypt;
 use Zend\Math\Rand;
+//use Zend\Form\Element\DateTime;
 
 /**
  * This service is responsible for adding/editing users
@@ -86,18 +88,21 @@ class UserManager
     public function createAdminUserIfNotExists()
     {
         $user = $this->entityManager->getRepository(Users::class)->findOneBy([]);
+        $organisation=$this->entityManager->getRepository(Organisation::class)->findOneBy([]);
         if ($user==null) {
             $user = new Users();
-            $user->setEmail('admin@example.com');
+            $user->setEmail('admin');
             $user->setName('Admin');
+            $user->setUsername('admin');
+            $user->setOrganisation($organisation);
             $bcrypt = new Bcrypt();
-            $passwordHash = $bcrypt->create('Secur1ty');        
+            $passwordHash = $bcrypt->create('12345678');        
             $user->setPassword($passwordHash);
             $user->setStatus(Users::STATUS_ACTIVE);
-            $user->setCreateDate(date('Y-m-d H:i:s'));
-            
+            $user->setCreateDate(new \DateTime());
+            $user->setLevel(1);
             $this->entityManager->persist($user);
-           // $this->entityManager->flush();
+            $this->entityManager->flush();
         }
     }
     
