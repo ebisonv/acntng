@@ -4,47 +4,159 @@ $this->headTitle('Sign in');
 $this->mainMenu()->setActiveItemId('login');
 
 $form->get('username')->setAttributes([
-    'class'=>'form-control', 
-    'placeholder'=>'Username',
-    'required' => true,
-    'autofocus' => true
-    ])
-    ->setLabelAttributes([
-        'class' => 'sr-only'
-    ]);
+            'class' => 'form-control',
+            'placeholder' => 'Username',
+            'required' => true,
+            'autofocus' => true
+        ])
+        ->setLabelAttributes([
+            'class' => 'sr-only'
+        ]);
 
 $form->get('password')->setAttributes([
-    'class'=>'form-control', 
-    'placeholder'=>'Password',
-    'required' => true,
-    ])
-    ->setLabelAttributes([
-        'class' => 'sr-only'
-    ]);
+            'id' => 'validation-password',
+            'name' => 'validation[password]',
+            'data-validation' => '[L>=6]',
+            'data-validation-message' => '$ must be at least 6 characters',
+            'class' => 'form-control password',
+            'placeholder' => 'Password',
+            'required' => true,
+        ])
+        ->setLabelAttributes([
+            'class' => 'sr-only'
+        ]);
 ?>
-
-<div class="row">
-    <div class="col-md-offset-4 col-md-3">
-        <form class="form-signin" method="post">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <?php if ($isLoginError): ?>
-            <div class="alert alert-warning" role="alert">
-                Incorrect login and/or password. 
-                <a href="<?= $this->url('reset-password') ?>">Forgot password?</a>
+<!-- START: pages/login-alpha -->
+<div class="cat__pages__login--fullscreen" style="background-image: url(img/login/1.jpg)">
+    <div class="cat__pages__login__header">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cat__pages__login__header__logo">
+                    <a href="javascript: history.back();">
+                        <img src="img/logo-inverse.png" alt="Clean UI Admin Template" />
+                    </a>
+                    <a href="javascript: void(0);" class="btn btn-sm btn-outline ml-3 switch-to-fullscreen">Switch Fullscreen / Windowed</a>
+                    <a href="javascript: void(0);" class="btn btn-sm btn-outline ml-3 random-bg-image" data-img="1">Randomize Background Image</a>
+                </div>
             </div>
-            <?php endif; ?>
-            <?= $this->formLabel($form->get('username')); ?>
-            <?= $this->formElement($form->get('username')); ?>
-            <?= $this->formLabel($form->get('password')); ?>
-            <?= $this->formElement($form->get('password')); ?>
-            <div class="checkbox">
-                <label>
-                    <?= $this->formElement($form->get('remember_me')); ?> Remember me
-                </label>
+            <div class="col-lg-4">
+                <div class="cat__pages__login__header__menu">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="javascript: history.back();">&larr; Back</a></li>
+                        <li class="list-inline-item active"><a href="javascript: void(0);">Login</a></li>
+                        <li class="list-inline-item"><a href="javascript: void(0);">About</a></li>
+                        <li class="list-inline-item"><a href="javascript: void(0);">Support</a></li>
+                    </ul>
+                </div>
             </div>
-            <?= $this->formElement($form->get('redirect_url')); ?>
-            <?= $this->formElement($form->get('csrf')) ?>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
+        </div>
+    </div>
+    <div class="cat__pages__login__block">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="cat__pages__login__block__promo text-white text-center">
+                    <h1 class="mb-3">
+                        <strong>WELCOME TO CLEAN UI ADMIN TEMPLATE</strong>
+                    </h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+                <div class="cat__pages__login__block__inner">
+                    <div class="cat__pages__login__block__form">
+                        <h4 class="text-uppercase">
+                            <strong>Please log in</strong>
+                        </h4>
+                        <br />
+                        <form id="form-validation" name="form-validation" class="form-signin" method="post">
+                            <?php if ($isLoginError): ?>
+                                <div class="alert alert-warning" role="alert">
+                                    Incorrect login and/or password. 
+                                    <a href="<?= $this->url('reset-password') ?>">Forgot password?</a>
+                                </div>
+                            <?php endif; ?>             
+                            <div class="form-group">
+                                <?= $this->formLabel($form->get('username')); ?>
+                                <?= $this->formElement($form->get('username')); ?>
+                            </div>
+                            <div class="form-group">
+                                <?= $this->formLabel($form->get('password')); ?>
+                                <?= $this->formElement($form->get('password')); ?>  
+                            </div>
+                            <div class="form-group">
+                                <a href="javascript: void(0);" class="pull-right cat__core__link--blue cat__core__link--underlined">Forgot Password?</a>
+                                <div class="checkbox">
+                                    <label>
+                                        <?= $this->formElement($form->get('remember_me')); ?>
+                                        Remember me
+                                    </label>
+                                </div>
+                                <?= $this->formElement($form->get('redirect_url')); ?>
+                                <?= $this->formElement($form->get('csrf')) ?> 
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-3">Sign In</button>
+                                <span class="register-link">
+                                    <a href="" class="cat__core__link--blue cat__core__link--underlined">Register</a> if you don't have account
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span>
+                                    Use another service to Log In
+                                </span>
+                                <div class="mt-2">
+                                    <a href="javascript: void(0);" class="btn btn-icon">
+                                        <i class="icmn-facebook"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-icon">
+                                        <i class="icmn-google"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-icon">
+                                        <i class="icmn-windows"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-icon">
+                                        <i class="icmn-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cat__pages__login__footer text-center">
+        <ul class="list-unstyled list-inline">
+            <li class="list-inline-item"><a href="javascript: void(0);">Terms of Use</a></li>
+            <li class="active list-inline-item"><a href="javascript: void(0);">Compliance</a></li>
+            <li class="list-inline-item"><a href="javascript: void(0);">Confidential Information</a></li>
+            <li class="list-inline-item"><a href="javascript: void(0);">Support</a></li>
+            <li class="list-inline-item"><a href="javascript: void(0);">Contacts</a></li>
+        </ul>
     </div>
 </div>
+
+<script>
+    $(function () {
+
+alert("")
+        $.validate({
+            submit: {
+                settings: {
+                    inputContainer: '.form-group',
+                    errorListClass: 'form-control-error',
+                    errorClass: 'has-danger'
+                }
+            }
+        });
+
+        // Show/Hide Password
+        $('.password').password({
+            eyeClass: '',
+            eyeOpenClass: 'icmn-eye',
+            eyeCloseClass: 'icmn-eye-blocked'
+        });
+
+    });
+
+</script>
+<!-- END: pages/login-alpha -->
