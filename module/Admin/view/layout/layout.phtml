@@ -5,27 +5,37 @@
         <meta charset="utf-8">
         <?= $this->headTitle('User Demo')->setSeparator(' - ')->setAutoEscape(false) ?>
 
-        <?= $this->headMeta()
-            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
-            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        <?=
+                $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
         ?>
 
         <!-- Le styles -->
-        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
-                      //  ->prependStylesheet($this->basePath('css/style.css'))
-                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
-                        ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
-                        ->prependStylesheet($this->basePath('css/pages.cleanui.css'))
+        <?=
+                $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+                //  ->prependStylesheet($this->basePath('css/style.css'))
+                ->prependStylesheet($this->basePath("assets/vendors/by_hands/font-icomoon/style.css"))
+                ->prependStylesheet($this->basePath("assets/modules/vendors/common/vendors.cleanui.css"))
+                ->prependStylesheet($this->basePath("assets/modules/core/common/core.cleanui.css"))
+                ->prependStylesheet($this->basePath("assets/vendors/by_hands/font-icomoon/style.css"))
+                ->prependStylesheet($this->basePath("assets/vendors/by_hands/font-linearicons/style.css"))
+                ->prependStylesheet($this->basePath("assets/vendors/by_hands/font-awesome/css/font-awesome.min.css"))
+                ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                ->prependStylesheet($this->basePath('css/pages.cleanui.css'))
         ?>
 
         <!-- Scripts -->
-        <?= $this->headScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
-            ->prependFile($this->basePath('assets/vendors/by_bower/html5-form-validation/dist/jquery.validation.min.js'))
+        <?=
+                $this->headScript()
+                ->prependFile($this->basePath('assets/vendors/by_bower/bootstrap-show-password/bootstrap-show-password.min.js'))
+                ->prependFile($this->basePath('assets/vendors/by_bower/html5-form-validation/dist/jquery.validation.min.js'))
+                ->prependFile($this->basePath('js/bootstrap.min.js'))
+                ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
         ?>
-    </head>
+    </head>       
     <body>
-   <?= $this->content; ?>
+        <?= $this->content; ?>
     </body>
 </html>
