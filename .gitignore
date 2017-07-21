@@ -1,9 +1,10 @@
 .vagrant/
 vendor/
 config/development.config.php
-#data/cache/*
+data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
 public/assets/vendors
 public/assets/modules/vendors
 public/img/captcha
+composer.lock
