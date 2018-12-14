@@ -10,18 +10,19 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users", indexes={@ORM\Index(name="fk_user_orrganisation_id_idx", columns={"organisation_id"})})
  * @ORM\Entity
  */
-class Users
-{
-   // User status constants.
-    const STATUS_ACTIVE       = 1; // Active user.
-    const STATUS_RETIRED      = 2; // Retired user.
+class Users {
+
+    const STATUS_ACTIVE = 1; // Active user.
+    const STATUS_RETIRED = 2; // Retired user.
+
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+
     private $id;
 
     /**
@@ -46,7 +47,7 @@ class Users
     private $name;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
      */
@@ -60,7 +61,7 @@ class Users
     private $email;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="level", type="boolean", nullable=false)
      */
@@ -74,14 +75,14 @@ class Users
     private $createDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true)
      */
     private $updateDate;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="status", type="boolean", nullable=false)
      */
@@ -98,302 +99,232 @@ class Users
     private $organisation;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * Get id.
      *
-     * @ORM\ManyToMany(targetEntity="Admin\Entity\Shop", mappedBy="user")
+     * @return int
      */
-    private $shop;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->shop = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
-     * Set username
+     * Set username.
      *
      * @param string $username
      *
      * @return Users
      */
-    public function setUsername($username)
-    {
+    public function setUsername($username) {
         $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get username.
      *
      * @return string
      */
-    public function getUsername()
-    {
+    public function getUsername() {
         return $this->username;
     }
 
     /**
-     * Set password
+     * Set password.
      *
      * @param string $password
      *
      * @return Users
      */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get password
+     * Get password.
      *
      * @return string
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
      * @return Users
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
     /**
-     * Set address
+     * Set address.
      *
-     * @param string $address
+     * @param string|null $address
      *
      * @return Users
      */
-    public function setAddress($address)
-    {
+    public function setAddress($address = null) {
         $this->address = $address;
 
         return $this;
     }
 
     /**
-     * Get address
+     * Get address.
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
      * @return Users
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
     /**
-     * Set level
+     * Set level.
      *
-     * @param boolean $level
+     * @param bool $level
      *
      * @return Users
      */
-    public function setLevel($level)
-    {
+    public function setLevel($level) {
         $this->level = $level;
 
         return $this;
     }
 
     /**
-     * Get level
+     * Get level.
      *
-     * @return boolean
+     * @return bool
      */
-    public function getLevel()
-    {
+    public function getLevel() {
         return $this->level;
     }
 
     /**
-     * Set createDate
+     * Set createDate.
      *
      * @param \DateTime $createDate
      *
      * @return Users
      */
-    public function setCreateDate($createDate)
-    {
+    public function setCreateDate($createDate) {
         $this->createDate = $createDate;
 
         return $this;
     }
 
     /**
-     * Get createDate
+     * Get createDate.
      *
      * @return \DateTime
      */
-    public function getCreateDate()
-    {
+    public function getCreateDate() {
         return $this->createDate;
     }
 
     /**
-     * Set updateDate
+     * Set updateDate.
      *
-     * @param \DateTime $updateDate
+     * @param \DateTime|null $updateDate
      *
      * @return Users
      */
-    public function setUpdateDate($updateDate)
-    {
+    public function setUpdateDate($updateDate = null) {
         $this->updateDate = $updateDate;
 
         return $this;
     }
 
     /**
-     * Get updateDate
+     * Get updateDate.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getUpdateDate()
-    {
+    public function getUpdateDate() {
         return $this->updateDate;
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param boolean $status
+     * @param bool $status
      *
      * @return Users
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Get status
+     * Get status.
      *
-     * @return boolean
+     * @return bool
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
     /**
-     * Set organisation
+     * Set organisation.
      *
-     * @param \Admin\Entity\Organisation $organisation
+     * @param \Admin\Entity\Organisation|null $organisation
      *
      * @return Users
      */
-    public function setOrganisation(\Admin\Entity\Organisation $organisation = null)
-    {
+    public function setOrganisation(\Admin\Entity\Organisation $organisation = null) {
         $this->organisation = $organisation;
 
         return $this;
     }
 
     /**
-     * Get organisation
+     * Get organisation.
      *
-     * @return \Admin\Entity\Organisation
+     * @return \Admin\Entity\Organisation|null
      */
-    public function getOrganisation()
-    {
+    public function getOrganisation() {
         return $this->organisation;
     }
 
-    /**
-     * Add shop
-     *
-     * @param \Admin\Entity\Shop $shop
-     *
-     * @return Users
-     */
-    public function addShop(\Admin\Entity\Shop $shop)
-    {
-        $this->shop[] = $shop;
-
-        return $this;
-    }
-
-    /**
-     * Remove shop
-     *
-     * @param \Admin\Entity\Shop $shop
-     */
-    public function removeShop(\Admin\Entity\Shop $shop)
-    {
-        $this->shop->removeElement($shop);
-    }
-
-    /**
-     * Get shop
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getShop()
-    {
-        return $this->shop;
-    }
 }

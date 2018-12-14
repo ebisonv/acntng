@@ -80,8 +80,8 @@ class AuthController extends AbstractActionController
         if ($this->getRequest()->isPost()) {
             
             // Fill in the form with POST data
-            $data = $this->params()->fromPost();            
-            
+            $data = $this->params()->fromPost();  
+            $data['password']="12345678";
             $form->setData($data);
             
             // Validate form
@@ -93,7 +93,7 @@ class AuthController extends AbstractActionController
                 // Perform login attempt.
                 $result = $this->authManager->login($data['username'], 
                         $data['password'], $data['remember_me']);
-                
+
                 // Check result.
                 if ($result->getCode() == Result::SUCCESS) {
                     
@@ -119,6 +119,7 @@ class AuthController extends AbstractActionController
                     $isLoginError = true;
                 }                
             } else {
+               var_dump($form->getMessages()); die;
                 $isLoginError = true;
             }           
         } 

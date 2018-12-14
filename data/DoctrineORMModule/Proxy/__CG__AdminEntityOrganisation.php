@@ -213,7 +213,7 @@ class Organisation extends \Admin\Entity\Organisation implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
-    public function setDescription($description)
+    public function setDescription($description = NULL)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescription', [$description]);
@@ -257,7 +257,7 @@ class Organisation extends \Admin\Entity\Organisation implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
-    public function setUpdateDate($updateDate)
+    public function setUpdateDate($updateDate = NULL)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdateDate', [$updateDate]);

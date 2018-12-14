@@ -19,7 +19,9 @@ return [
                     'params' => [
                         'host' => 'localhost',
                         'port' => '3306',
-                        'dbname' => 'inventory',
+                        'username'=>'root',
+                        'password'=>'12345678',
+                        'dbname' => 'mc_buget',
                 ],
             ],
         ]

@@ -8,12 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
  * Organisation
  *
  * @ORM\Table(name="organisation")
- * @ORM\Entity(repositoryClass="\Admin\Repository\OrganisationRepository")
+ * @ORM\Entity
  */
 class Organisation
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -29,7 +29,7 @@ class Organisation
     private $name;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(name="description", type="text", length=65535, nullable=true)
      */
@@ -43,14 +43,14 @@ class Organisation
     private $createDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true)
      */
     private $updateDate;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="status", type="boolean", nullable=false)
      */
@@ -59,9 +59,9 @@ class Organisation
 
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -69,7 +69,7 @@ class Organisation
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -83,7 +83,7 @@ class Organisation
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -93,13 +93,13 @@ class Organisation
     }
 
     /**
-     * Set description
+     * Set description.
      *
-     * @param string $description
+     * @param string|null $description
      *
      * @return Organisation
      */
-    public function setDescription($description)
+    public function setDescription($description = null)
     {
         $this->description = $description;
 
@@ -107,9 +107,9 @@ class Organisation
     }
 
     /**
-     * Get description
+     * Get description.
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -117,7 +117,7 @@ class Organisation
     }
 
     /**
-     * Set createDate
+     * Set createDate.
      *
      * @param \DateTime $createDate
      *
@@ -131,7 +131,7 @@ class Organisation
     }
 
     /**
-     * Get createDate
+     * Get createDate.
      *
      * @return \DateTime
      */
@@ -141,13 +141,13 @@ class Organisation
     }
 
     /**
-     * Set updateDate
+     * Set updateDate.
      *
-     * @param \DateTime $updateDate
+     * @param \DateTime|null $updateDate
      *
      * @return Organisation
      */
-    public function setUpdateDate($updateDate)
+    public function setUpdateDate($updateDate = null)
     {
         $this->updateDate = $updateDate;
 
@@ -155,9 +155,9 @@ class Organisation
     }
 
     /**
-     * Get updateDate
+     * Get updateDate.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getUpdateDate()
     {
@@ -165,9 +165,9 @@ class Organisation
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param boolean $status
+     * @param bool $status
      *
      * @return Organisation
      */
@@ -179,9 +179,9 @@ class Organisation
     }
 
     /**
-     * Get status
+     * Get status.
      *
-     * @return boolean
+     * @return bool
      */
     public function getStatus()
     {
